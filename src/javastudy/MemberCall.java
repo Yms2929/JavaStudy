@@ -8,16 +8,26 @@ public class MemberCall {
 //	static int cv2 = iv; // 클래스변수는 인스턴스 변수를 사용할 수 없음
 	static int cv2 = new MemberCall().iv; // 객체를 생성하고 사용가능
 	
+	public static void main(String args[]) {
+		staticMethod1();
+		MemberCall mc = new MemberCall();
+		mc.instanceMethod1();
+		staticMethod2();
+		mc.instanceMethod2();
+	}
+	
 	static void staticMethod1() {
 		System.out.println(cv);
 //		System.out.println(iv); // 클래스메서드에서는 인스턴스변수 사용불가
 		MemberCall mc = new MemberCall();
 		System.out.println(mc.iv); // 객체 생성한 후 인스턴스변수 참조가능
+		System.out.println("-----");
 	}
 	
 	void instanceMethod1() {
 		System.out.println(cv);
 		System.out.println(iv);
+		System.out.println("-----");
 	}
 	
 	static void staticMethod2() {
