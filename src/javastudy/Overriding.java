@@ -1,9 +1,13 @@
 package javastudy;
+import java.util.*;
+import java.text.*;
 
 public class Overriding {
 	public static void main(String args[]) {
 		Child c = new Child();
 		c.method();
+		
+		ImportTest it = new ImportTest();
 	}
 }
 
@@ -35,5 +39,18 @@ class Child extends Parent {
 		System.out.println("x=" + x);
 		System.out.println("this.x=" + this.x); // 자식 클래스의 멤버 자기 자신일때 this
 		System.out.println("super.x=" + super.x); // 조상 클래스의 멤버를 구분할 때 super를 쓴다
+	}
+}
+
+class ImportTest {
+	
+	ImportTest() {
+		Date today = new Date();
+		
+		SimpleDateFormat date = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
+		
+		System.out.println("오늘 날짜는 " + date.format(today));
+		System.out.println("현재 시간은 " + time.format(today));
 	}
 }
